@@ -18,7 +18,7 @@ Instance types tested:
 
 ### Reproduction Steps
 
-It may take a few attempts to reproduce errors, but the observed behavior is that large simultaneous downloads stall out and eventually we receive a "connection reset by peer" error.
+It may take a few attempts to reproduce errors, but the observed behavior is that large simultaneous downloads stall out and eventually we receive a "connection reset by peer" error. Our observation is that this connection reset tends to be more prominent during business hours (when there's likely more network traffic across the VPC / within the cluster).
 
 #### Debian Slim Container
 
