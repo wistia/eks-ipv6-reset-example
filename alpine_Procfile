@@ -1,0 +1,9 @@
+test1: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test2: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test3: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test4: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test5: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test6: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test7: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test8: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
+test9: wget -O /dev/null https://embed-ssl.wistia.com/deliveries/daec417494c6f803bc18bdc77eb6e55b.bin
