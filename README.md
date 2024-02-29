@@ -18,7 +18,9 @@ Instance types tested:
 
 ### Reproduction Steps
 
-It may take a few attempts to reproduce errors, but the observed behavior is that large simultaneous downloads stall out and eventually we receive a "connection reset by peer" error. Our observation is that this connection reset tends to be more prominent during business hours (when there's likely more network traffic across the VPC / within the cluster).
+It may take a few attempts to reproduce errors, but the observed behavior is that large simultaneous downloads stall out and eventually we receive a "connection reset by peer" error. Sometimes, we also see TLS connection errors and DNS resolution errors, which cause the download to immediately error out.
+
+Connection reset/timeout errors tend to be more prominent during business hours (when there's likely more network traffic across the VPC / within the cluster).
 
 #### Debian Slim Container
 
@@ -54,19 +56,15 @@ wget https://raw.githubusercontent.com/wistia/eks-ipv6-reset-example/main/Procfi
 
 #### Example error output
 
+Sometimes we see errors around establishing connections over HTTPS:
 ```
-  2  723M    2 17.2M    0     0  18871      0 11:09:59  0:16:00 10:53:59     0* Recv failure: Operation timed out
-test2 | * OpenSSL SSL_read: Operation timed out, errno 110
-test2 | * Failed receiving HTTP2 data: 56(Failure when receiving data from the peer)
-  2  723M    2 17.2M    0     0  18866      0 11:10:09  0:16:01 10:54:08     0
-test2 | * Connection #0 to host embed-ssl.wistia.com left intact
-test2 | curl: (56) Recv failure: Operation timed out
-test2 | exit status 56
- 38  723M   38  280M    0     0   291k      0  0:42:22  0:16:25  0:25:57     0* Recv failure: Operation timed out
-test8 | * OpenSSL SSL_read: Operation timed out, errno 110
-test8 | * Failed receiving HTTP2 data: 56(Failure when receiving data from the peer)
- 38  723M   38  280M    0     0   291k      0  0:42:25  0:16:26  0:25:59     0
-test8 | * Connection #0 to host embed-ssl.wistia.com left intact
-test8 | curl: (56) Recv failure: Operation timed out
-test8 | exit status 56
+test9 | Connecting to embed-ssl.wistia.com (embed-ssl.wistia.com)|2600:9000:244d:7800:1e:c86:4140:93a1|:443... connected.
+test9 | Unable to establish SSL connection.
+test9 | exit status 4
+```
+
+```
+test3 | Resolving embed-ssl.wistia.com (embed-ssl.wistia.com)... failed: Try again.
+test3 | wget: unable to resolve host address 'embed-ssl.wistia.com'
+test3 | exit status 4
 ```
