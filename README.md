@@ -1,5 +1,9 @@
 This repository contains the files/instructions on reproducing an issue that we've seen on EKS IPv6 clusters using AWS VPC CNI.
 
+Kubernetes Versions:
+- 1.28 (eks.7) w/ kube-proxy v1.28.2-eksbuild.2
+- 1.29 (eks.1) w/ kube-proxy v1.29.0-eksbuild.2
+
 Reproduced across AL2/Ubuntu/Bottlerocket with Kernel versions:
 - AL2: 5.10.209-198.858.amzn2.aarch64 / 5.10.209-198.858.amzn2.x86_64
 - Ubuntu 22: 6.2.0-1017-aws #17~22.04.1-Ubuntu SMP
