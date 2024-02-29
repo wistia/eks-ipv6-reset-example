@@ -10,6 +10,12 @@ Tested on AWS VPC CNI versions:
 - v1.16.3-eksbuild.2
 - v1.15.1-eksbuild.1
 
+Instance types tested:
+- m6g.xlarge
+- c6g.xlarge
+- m7a.8xlarge
+- m6a.8xlarge
+
 ### Reproduction Steps
 
 It may take a few steps to reproduce errors, but the observed behavior is that downloads stall out and eventually we receive a "connection reset by peer" error.
