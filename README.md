@@ -25,6 +25,7 @@ It may take a few attempts to reproduce errors, but the observed behavior is tha
 Launch a container:  `kubectl run -it --rm ipv6-reset-test-debian --image public.ecr.aws/debian/debian:bullseye-slim --command -- bash`
 
 ```
+apt-get update && apt-get install -y wget
 ARCH="$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/)"
 wget https://github.com/wistia/hivemind/releases/download/v1.1.1/hivemind-v1.1.1-wistia-linux-$ARCH.gz
 gunzip hivemind-v1.1.1-wistia-linux-$ARCH.gz
