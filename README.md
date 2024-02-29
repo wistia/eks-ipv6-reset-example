@@ -18,7 +18,7 @@ Instance types tested:
 
 ### Reproduction Steps
 
-It may take a few steps to reproduce errors, but the observed behavior is that downloads stall out and eventually we receive a "connection reset by peer" error.
+It may take a few attempts to reproduce errors, but the observed behavior is that large simultaneous downloads stall out and eventually we receive a "connection reset by peer" error.
 
 #### Debian Slim Container
 
